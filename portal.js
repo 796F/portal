@@ -1,4 +1,4 @@
-#! /usr/bin/env node
+#!/usr/bin/env node
 
 /* 
   portal is a simple command line LAN transfer tool.  

@@ -2,14 +2,18 @@
   "name": "portal",
   "version": "0.0.1",
   "description": "Portal V0",
-  "main": "index.js",
   "author": "Mike Xia",
   "preferGlobal": "true",
+  "main" : "./lib/http-server",
   "bin": {
     "portal": "./portal.js"
   },
   "dependencies": {
     "copy-paste": "^1.0.1",
     "polo": "^0.7.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/xiamike/portal.git"
   }
 }
