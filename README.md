@@ -1,6 +1,12 @@
 # portal
 portal is a simple command line LAN transfer tool.
 
+install :
+
+`npm install -g portal`
+
+usage :
+
 ```
   myComp~$ cat myFace.jpg | portal
   Portal Openned : 1549
