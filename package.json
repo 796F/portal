@@ -9,6 +9,7 @@
     "portal": "./portal.js"
   },
   "dependencies": {
+    "copy-paste": "^1.0.1",
     "polo": "^0.7.1"
   }
 }
