@@ -2,11 +2,11 @@
 
 portal is a simple command line LAN transfer tool.  it accepts both pipe and file/dir.  
 
-install :
+## install
 
 `npm install -g portal`
 
-# pipe method
+## pipe method
 
 media files :
 
@@ -26,7 +26,7 @@ text blobs :
   mySecondComp~$ portal 9377 | pbcopy
 ```
 
-# path argument method
+## path argument method
 
 file :
 
