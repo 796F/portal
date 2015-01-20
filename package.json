@@ -1,0 +1,14 @@
+{
+  "name": "portal",
+  "version": "0.0.1",
+  "description": "Portal V0",
+  "main": "index.js",
+  "author": "Mike Xia",
+  "preferGlobal": "true",
+  "bin": {
+    "portal": "./portal.js"
+  },
+  "dependencies": {
+    "polo": "^0.7.1"
+  }
+}
