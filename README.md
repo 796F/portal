@@ -6,7 +6,7 @@ portal is a simple command line LAN transfer tool.  it accepts both pipe and fil
 
 `npm install -g portal`
 
-## pipe method
+## piped
 
 media files :
 
@@ -20,13 +20,13 @@ media files :
 text blobs : 
 
 ```
-  myComp~$ echo "something i copy to clipbored" | portal
+  myComp~$ echo "kopee me to ur klipboredz" | portal
   Portal Openned : 9377
 
   mySecondComp~$ portal 9377 | pbcopy
 ```
 
-## path argument method
+## argument
 
 file :
 
@@ -41,7 +41,7 @@ file :
 entire directory : 
 
 ```
-  myComp~$ portal -R /my/dir
+  myComp~$ portal /my/dir
   Portal Openned : 1337
 
   mySecondComp~$ portal 1337

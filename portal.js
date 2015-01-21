@@ -1,59 +1,45 @@
 #!/usr/bin/env node
 
-/* 
-  portal is a simple command line LAN transfer tool.  
-
-  myComp~$ cat myFace.jpg | portal
-  Portal Openned : 1549
-
-  mySecondComp~$ portal 1549 >> myFace.jpg
-
-*/
-
 'use strict';
 
 var fs = require('fs');
-var http = require('http');
+var walk    = require('walk')
+var Portal = require('./lib/portal');
 
-var PORT = 1337;
+var _ = require('underscore');
 
-var polo = require('polo');
-var apps = polo();
-
-apps.once('up', function(name, service) {
-    console.log(apps.get(name));
-});
-
-apps.put({
-  name : 'portal',
-  port : PORT
-});
-
-
-var server = http.createServer(function(req, res) {
-  var body = '';
-
-  req.on('data', function (chunk) {
-    body += chunk;
+if(process.argv.length == 2){
+  //pipe portal portal
+  process.stdin.resume();
+  var data = '';
+  process.stdin.on('data', function(chunk) {
+    data += chunk;
   });
-
-  req.on('end', function () {
-    
+  process.stdin.on('end', function() {
+    // console.log('PIPE TO PORTAL', pipeIn);
+    var portal = new Portal();
+    portal.startServer(data);
   });
-
-});
-
-server.listen(PORT);
-
-process.stdin.resume();
-
-var pipeIn = '';
-
-process.stdin.on('data', function(data) {
-  pipeIn += data;
-});
-
-process.stdin.on('end', function(data) {
-  console.log(pipeIn.length);
-});
+} else if(process.argv.length == 3 && !parseInt(process.argv[2])) {
+    // //portal myFile.jpg 
+    // //portal /myDir
+    // if(fs.lstatSync(process.argv[2]).isDirectory()) {
+    //   var walker = walk.walk(process.argv[2], { followLinks: false });
+    //   var files = [];
+    //   walker.on('file', function(root, stat, next) {
+    //     files.push(root + '/' + stat.name);
+    //     next();
+    //   });
+    //   walker.on('end', function() {
+    //     console.log(files);
+    //   });
+    // }else {
+    //   console.log('send', process.argv[2], ' thorugh portal!');
+    // }
+} else {
+  //portal 1337
+  var portalNumber = parseInt(process.argv[2]);
+  var portal = new Portal();
+  portal.startClient(portalNumber)
+}
 

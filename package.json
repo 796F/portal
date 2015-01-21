@@ -1,16 +1,29 @@
 {
-  "name": "portal",
+  "name": "portal-time",
   "version": "0.0.1",
-  "description": "Portal V0",
+  "description": "Portal is a command-line tool for transfering data between computers",
   "author": "Mike Xia",
   "preferGlobal": "true",
-  "main" : "./lib/http-server",
+  "main": "./lib/http-server",
   "bin": {
     "portal": "./portal.js"
   },
+  "keywords": [
+    "command",
+    "line",
+    "file",
+    "transfer",
+    "tool",
+    "text",
+    "copy", 
+    "paste",
+    "pipe"
+  ],
   "dependencies": {
     "copy-paste": "^1.0.1",
-    "polo": "^0.7.1"
+    "polo": "^0.7.1",
+    "underscore": "^1.7.0",
+    "walk": "^2.3.9"
   },
   "repository": {
     "type": "git",
